@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+</head>
+<body>
+    <h1>登录</h1>
+    <form method="POST" action="">
+        <label for="username">用户名:</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">密码:</label>
+        <input type="password" name="password" id="password" required>
+        <button type="submit">登录</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
