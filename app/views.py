@@ -92,9 +92,10 @@ def home():
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'GET':
+  if request.method == 'GET':
         return render_template('login.html')
-    elif request.method == 'POST':
+
+  elif request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
         user = Users.query.filter_by(username=username).first()
@@ -115,3 +116,4 @@ def register():
 @auth_bp.route('/comment',methods=['get','post'])
 def comment():
     pass
+
