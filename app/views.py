@@ -83,7 +83,7 @@ def load_user(user_id):
 
 @auth_bp.route('/')
 def index():
-    return redirect(url_for('auth.home'))
+    return render_template('home.html')
 
 @auth_bp.route('/home')
 @login_required
@@ -106,6 +106,12 @@ def login():
             flash('登录失败，请检查用户名或密码。', 'error')
             return render_template('login.html')
 
-# git config --global user.email 360892334@qq.com
-#
-# git config --global user.name HuaYang1156515
+@auth_bp.route('logout')
+def logout():
+    pass
+@auth_bp.route('/register',methods=['get','post'])
+def register():
+    pass
+@auth_bp.route('/comment',methods=['get','post'])
+def comment():
+    pass
