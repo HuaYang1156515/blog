@@ -5,12 +5,31 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>homepage</title>
+    <title>博客首页</title>
 </head>
 <body>
-    <h1>Welcome </h1>
-<hr>
-<p>Welcome to my blog homgpage</p>
+<!--
+    <h1>博客首页 </h1>
+    {#
+{% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alter alert -{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
+{% for post in posts %}
+    <h2><a href="{{ url_for('auth.post_detail',post_id=post.id) }}">{{ post.title }}</a></h2>
+    <p>{{ post.content }}</p>
+{% endfor %}
+<a href="{{ url_for('create_post') }}">创建新文章</a>
+#}
+-->
+<h1>博客文章</h1>
+<h2><a href="/post/1">第一篇文章</a></h2>
+<h2><a href="/post/2">第二篇文章</a></h2>
+<h2><a href="/post/3">第三篇文章</a></h2>
+<a href="/create_post">创建文章</a>
 </body>
 </html>
